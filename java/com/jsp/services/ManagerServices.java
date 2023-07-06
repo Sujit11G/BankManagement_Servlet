@@ -23,7 +23,6 @@ EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory
 	
 	Random random=new Random();
 	ManagerDao managerDao=new ManagerDao();
-	//CustomerService customerService=new CustomerService();
 	CustomerDao customerDao=new CustomerDao();
 	Manager manager=new Manager();
 	Customer customer=new Customer();
@@ -60,27 +59,7 @@ EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory
 		return managerDao.updateManagerDetailsByID(manager, id);
 	}
 	
-	//======================toFetch_All_Approval_Pending_Customer_Status============================
-	//=================================By_Manager_ID========================================
-	
-//	public List<Customer> fetchStatus(int id) {
-//
-//		List<Customer> customers=fetchAllCustomer(id);
-//
-//		for(Customer c:customers) {
-//			if(c.getStatus()==null) {
-//				System.out.println("Here are Approval pending Customers");
-//				System.out.println("Customer ID: "+c.getId());
-//			    System.out.println("Customer Name "+c.getName());
-//			    System.out.println();
-//			
-//			}else {
-//				System.out.println("All Customers are Approvaed");
-//			}
-//		
-//		}
-//		return fetchAllCustomer(id);
-//	}
+
 	
 	//===========================toFetch_AllCustomer_Data==================================
 			//=========================By_Managers_ID=================================
@@ -90,67 +69,8 @@ EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory
 		
 		return managerDao.getAllCustomerData();
 	}
-	
-	
-	
-	//==============================toSet_Status_Customer_Approval================================
-          //==============================By_Manager_ID======================================
-	
-//	public Customer approveCustomerByID(int bank_manager_id,int customer_id,String status) {
-//		
-//		Customer customer=customerService.getCustomerByID(customer_id);
-//		Manager manager=managerDao.fetchManagerByID(bank_manager_id);
-//		
-//		if(customer.getStatus()==null) 
-//		{
-//			
-//			if(manager.getManager_id()==customer.getManager().getManager_id())
-//			{
-//				customer.setStatus(status);
-//				customerService.updateCustomerDeta(customer_id,status);
-//				
-//				
-//			}else {
-//				System.out.println("ID didn't Matched");
-//			}
-//		}
-//		 else {
-//		System.out.println("Customer is first Approved");
-//		 }
-//		return customer;
-//	}
-	
-	//==============================to_Block_Customer================================
-          //=========================By_Manager_ID======================================
-	
-//	public Customer approveCustomerByID(int manager_id,int customer_id,String status) {
-//		
-//		Customer customer=customerDao.fetchCustomerByID(customer_id);
-//		
-//		Manager manager=managerDao.fetchManagerByID(manager_id);
-//		
-//		if(customer.getStatus().equals("Approve")) 
-//		{
-//			
-//			if(manager.getId()==customer.getManager().getId())
-//			{
-//				customer.setStatus("Block");
-//				customerDao.updateCustomer(customer);
-//				
-//				
-//			}else {
-//				System.out.println("You are not Authorized To Block");
-//			}
-//		}
-//		 else {
-//		System.out.println("Customer is not approve");
-//		 }
-//		return customer;
-//	}
-		
-
-        
-	// ========================toSet_Customer_Data_By_ManagerID========================
+	        
+// ========================toSet_Customer_Data_By_ManagerID==============================
 	
 	public Customer setCustomerDetails(int managerId, int customerId,String acc_type,String status) {
 	
